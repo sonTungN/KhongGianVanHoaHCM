@@ -1,7 +1,7 @@
 import React from "react";
-import SearchForm from "../_components/search/search-form";
-import ArticlesSection from "../_components/articles-section";
-import { BookCarousel } from "../_components/carousel-section";
+import SearchForm from "./_components/search/search-form";
+import ArticlesSection from "./_components/articles-section";
+import { BookCarousel } from "./_components/carousel-section";
 
 function KhongGianVanHoa() {
   return (

@@ -22,6 +22,10 @@ import {
 } from "@/components/ui/card";
 import { DatePicker } from "@/components/input-picker/date-picker-input";
 import RecentSearchList from "./recent-search-list";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Ellipsis } from "lucide-react";
+import Link from "next/link";
 
 // interface SearchFormProps {
 //   onSearch: (searchText: string, fromDate: string, toDate: string) => void;
@@ -121,16 +125,30 @@ export default function SearchForm() {
       id="search-form"
       className="w-full max-w-7xl mx-auto my-16 px-4 md:px-6"
     >
+      <Breadcrumb className="mb-4">
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link className="text-base hover:text-primary" href="/">Trang chủ</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link className="font-bold text-base hover:text-primary" href="/bai-viet">Bài viết</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+
       <h1 className="text-4xl font-bold text-primary mb-8">
-        Không gian văn hoá Hồ Chí Minh
+        Thư viện bài viết
       </h1>
 
       <Card className="border-2 rounded-xl shadow-sm">
         <CardHeader>
           <div className="flex justify-between items-center">
-            <h2 className="text-2xl font-bold text-primary">
-              Tìm bài viết
-            </h2>
+            <h2 className="text-2xl font-bold text-primary">Tìm bài viết</h2>
           </div>
         </CardHeader>
 
