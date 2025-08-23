@@ -6,11 +6,11 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
-interface BookNowCarouselProps {
+interface BookCarouselProps {
   className?: string;
 }
 
-export function BookNowCarousel({ className }: BookNowCarouselProps) {
+export function BookCarousel({ className }: BookCarouselProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(true);
@@ -95,12 +95,15 @@ export function BookNowCarousel({ className }: BookNowCarouselProps) {
   ];
 
   return (
-    <div className={cn("relative w-screen overflow-hidden mt-16", className)}>
+    <section
+      id="carousel"
+      className={cn("relative w-screen overflow-hidden", className)}
+    >
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {slides.map((slide) => (
             <div key={slide.id} className="relative flex-[0_0_100%]">
-              <div className="relative h-[60vh] w-screen">
+              <div className="relative h-[50vh] w-screen">
                 <div className="absolute inset-0 bg-gradient-to-b from-foreground/0 via-foreground/5 to-foreground/10 dark:via-background/5 dark:to-background/10 z-10" />
                 <div
                   className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -162,6 +165,6 @@ export function BookNowCarousel({ className }: BookNowCarouselProps) {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
